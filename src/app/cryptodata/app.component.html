@@ -3,7 +3,7 @@
 	<div class="contentAll wt60"  *ngIf="mostrar1">
 		<h1>Crypto View App</h1>
 		<div class="contentResult">
-			<label>Bitcoin</label>
+			<label>{{nombrecm}}</label>
 			<div class="result">USD {{valorusd}}</div>
 			<button type="button" class="btn" (click)="Regresar()">Ok</button>
 
@@ -12,7 +12,7 @@
     <div class="contentAll wt60" *ngIf="mostrar2">
       <h1 >Crypto View App </h1>
       <div *ngFor="let info of dato" class="tblFull wt100">
-        <div class="rowTbl titletbl" (click)="detalles(info.cmc_rank)">
+        <div class="rowTbl titletbl" (click)="detalles(info.id)">
           	<div class="colTbl wt10">{{info.cmc_rank}} </div>   <div class="colTbl wt85">{{info.name}} </div>      
       	</div>
   	  </div>
