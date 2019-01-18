@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+  height: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+:host.is-open {
+  display: block;
+}
