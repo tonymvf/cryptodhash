@@ -10,9 +10,10 @@ import { DetalleComponent } from '../detalle/detalle.component';
 export class Cryptodata implements OnInit {
   title = 'Crypto View App';
   results = "";
-  dato="";
+  dato=null;
   id=1;
   valorusd = '';
+  nombrecm="";
   mostrar1=false;
   mostrar2=true;
   constructor(private http: HttpClient){
@@ -23,9 +24,10 @@ export class Cryptodata implements OnInit {
   this.results=valores;
     this.http.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id='+valores, {
         headers: new HttpHeaders().set('X-CMC_PRO_API_KEY', 'e2f37ab5-fbe4-49af-89c7-da2c787285d6')
-      }).subscribe(data => {
-      this.valorusd=data.data[valores].quote.USD.price;
-        console.log(data.data[valores]);
+      }).subscribe(lista => {
+      this.valorusd=lista.data[valores].quote.USD.price;
+      this.nombrecm=lista.data[valores].name;
+        console.log(lista.data[valores]);
     });
   }
   Regresar(){
@@ -35,9 +37,9 @@ export class Cryptodata implements OnInit {
   ngOnInit(): void {
     	this.http.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
         headers: new HttpHeaders().set('X-CMC_PRO_API_KEY', 'e2f37ab5-fbe4-49af-89c7-da2c787285d6')
-      }).subscribe(data => {
-      this.dato=data.data;
-      	console.log(data.data);
+      }).subscribe(lista => {
+      this.dato=lista.data;
+      	console.log(lista.status);
     });
   }
 }
