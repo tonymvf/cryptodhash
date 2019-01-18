@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, HostListener, Directive } from '@angular/core';
-import { HttpClient, HttpHeaders,Response  } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
@@ -25,9 +25,9 @@ export class Cryptodata implements OnInit {
     this.http.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id='+valores, {
         headers: new HttpHeaders().set('X-CMC_PRO_API_KEY', 'e2f37ab5-fbe4-49af-89c7-da2c787285d6')
       }).subscribe(lista => {
-      this.valorusd=lista.data[valores].quote.USD.price;
-      this.nombrecm=lista.data[valores].name;
-        console.log(lista.data[valores]);
+      this.valorusd=lista['data'][valores].quote.USD.price;
+      this.nombrecm=lista['data'][valores].name;
+        console.log(lista['data'][valores]);
     });
   }
   Regresar(){
@@ -38,8 +38,8 @@ export class Cryptodata implements OnInit {
     	this.http.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', {
         headers: new HttpHeaders().set('X-CMC_PRO_API_KEY', 'e2f37ab5-fbe4-49af-89c7-da2c787285d6')
       }).subscribe(lista => {
-      this.dato=lista.data;
-      	console.log(lista.status);
+      this.dato=lista['data'];
+      	console.log(lista[status]);
     });
   }
 }
