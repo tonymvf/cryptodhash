@@ -15,13 +15,13 @@ export class Cryptodata implements OnInit {
   nombrecm="";
   mostrar1=false;
   mostrar2=true;
-  id=null;
+  repetir=null;
   tiempo=3000;
   constructor(private http: HttpClient){
   }
   drefresh(valores){
     this.detalles(valores);
-    this.id = setInterval(() => {
+    this.repetir = setInterval(() => {
     this.detalles(valores); 
   }, this.tiempo);
   }
@@ -39,8 +39,8 @@ export class Cryptodata implements OnInit {
     });
   }
   Regresar(){
-    if (this.id) {
-    clearInterval(this.id);
+    if (this.repetir) {
+    clearInterval(this.repetir);
   }
     this.mostrar2=true;
     this.mostrar1=false;
