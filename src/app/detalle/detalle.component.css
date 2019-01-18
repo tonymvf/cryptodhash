@@ -1,0 +1,90 @@
+body{
+	margin: 0 auto;
+	padding:0;
+}
+label{
+	font-weight:bold;
+}
+.content {
+    width: 80%;
+    margin: 20px auto;
+}
+.contentAll {
+    box-shadow: 2px 4px 13px -1px #ccc;
+    padding: 1%;
+    float: left;
+    margin: 20px 20%;
+}
+.tblFull {
+     float: left;
+}
+.rowTbl {
+    float: left;
+    width: 100%;
+}
+.colTbl {
+    float: left;
+    border: 1px solid #ccc;
+    padding: 5px 1%;
+}
+.rowTbl:hover {
+    cursor: pointer;
+	background: #f6f6f680;
+}
+.titletbl {
+    font-weight: bold;
+    background: #efefef;
+	cursor: default !important;
+}
+.parCell {
+    background: #f6f6f654;
+}
+.contentResult {
+    width: 100%;
+}
+.result {
+    margin: 5px 10px 15px 0;
+}
+.btn {
+    float: right;
+    padding: 6px 20px;
+    background: #76c2fa;
+    border: 1px solid #4184b5;
+}
+.wt8{
+	width:8%;
+}
+.wt10{
+	width:10%;
+}
+.wt20{
+	width:20%;
+}
+.wt30{
+	width:30%;
+}
+.wt40{
+	width:40%;
+}
+.wt50{
+	width:50%;
+}
+.wt60{
+	width:60%;
+}
+.wt70{
+	width:70%;
+}
+.wt80{
+	width:80%;
+}
+.wt85 {
+    width: 85%;
+}
+.wt90{
+	width:90%;
+}
+
+.wt100{
+	width:100%;
+}
